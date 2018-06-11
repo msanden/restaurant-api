@@ -1,9 +1,12 @@
 package dao;
 
+import models.Foodtype;
 import models.Restaurant;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sql2oRestaurantDao implements RestaurantDao { //don't forget to shake hands with your interface!
@@ -82,4 +85,16 @@ public class Sql2oRestaurantDao implements RestaurantDao { //don't forget to sha
       System.out.println(ex);
     }
   }
+
+  @Override
+  public void addRestaurantToFoodtype(Restaurant restaurant, Foodtype foodtype){
+
+  }
+
+  @Override
+  public List<Foodtype> getAllFoodtypesByRestaurant(int restaurantId){
+    List<Foodtype> foodtypes = new ArrayList(); //empty list
+    return foodtypes;
+  }
+
 }
