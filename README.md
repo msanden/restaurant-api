@@ -1,1 +1,1 @@
-Welcome to jadle - a simple Yelp API clone with Java and Spark and Gradle.
+A simple Yelp API clone with Java, Spark & Gradle.
