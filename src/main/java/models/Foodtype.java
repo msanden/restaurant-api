@@ -3,6 +3,7 @@ package models;
 import java.util.Objects;
 
 public class Foodtype {
+
   private String name;
   private int id;
 
