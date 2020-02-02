@@ -15,7 +15,6 @@ public class Sql2oRestaurantDaoTest {
   private Connection conn;
   private Sql2oRestaurantDao restaurantDao;
   private Sql2oFoodtypeDao foodtypeDao;
-  private Sql2oReviewDao reviewDao;
 
   @Before
   public void setUp() throws Exception {
@@ -23,7 +22,6 @@ public class Sql2oRestaurantDaoTest {
     Sql2o sql2o = new Sql2o(connectionString, "", "");
     restaurantDao = new Sql2oRestaurantDao(sql2o);
     foodtypeDao = new Sql2oFoodtypeDao(sql2o);
-    reviewDao = new Sql2oReviewDao(sql2o);
     conn = sql2o.open();
   }
 
@@ -33,7 +31,7 @@ public class Sql2oRestaurantDaoTest {
   }
 
   @Test
-  public void addingFoodSetsId() throws Exception {
+  public void addingRestaurantSetsId() throws Exception {
     Restaurant testRestaurant = setupRestaurant();
     assertNotEquals(0, testRestaurant.getId());
   }
