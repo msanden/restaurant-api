@@ -49,6 +49,15 @@ public class Sql2oFoodtypeDaoTest {
   }
 
   @Test
+  public void foodByIdReturnsCorrectFoodType() throws Exception {
+    Foodtype testfoodtype = setupNewFoodtype();
+    foodtypeDao.add(testfoodtype);
+    Foodtype testfoodtype2 = setupNewFoodtype();
+    foodtypeDao.add(testfoodtype2);
+    assertEquals(testfoodtype, foodtypeDao.foodById(testfoodtype.getId()));
+  }
+
+  @Test
   public void deleteByIdDeletesCorrectFoodtype() throws Exception {
     Foodtype foodtype = setupNewFoodtype();
     foodtypeDao.add(foodtype);
@@ -59,7 +68,9 @@ public class Sql2oFoodtypeDaoTest {
   @Test
   public void clearAll() throws Exception {
     Foodtype testFoodtype = setupNewFoodtype();
+    foodtypeDao.add(testFoodtype);
     Foodtype otherFoodtype = setupNewFoodtype();
+    foodtypeDao.add(otherFoodtype);
     foodtypeDao.clearAll();
     assertEquals(0, foodtypeDao.getAll().size());
   }
@@ -78,7 +89,7 @@ public class Sql2oFoodtypeDaoTest {
   }
 
   @Test
-  public void deleteingRestaurantAlsoUpdatesJoinTable() throws Exception {
+  public void deletingRestaurantAlsoUpdatesJoinTable() throws Exception {
     Foodtype testFoodtype  = new Foodtype("Seafood");
     foodtypeDao.add(testFoodtype);
 
